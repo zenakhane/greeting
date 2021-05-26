@@ -12,6 +12,9 @@ var greetNames = Greetings();
 function greetMe() {
     var languageBtn = document.querySelector("input[name='langs']:checked");
     if (languageBtn && name1.value != '') {
+        setTimeout(function(){
+            greetme.innerHTML = ''
+        }, 5000)
         var langBtn = languageBtn.value.trim();
         console.log(langBtn)
         greetNames.nameToGreet(name1.value)
@@ -22,7 +25,7 @@ function greetMe() {
     else if (name1.value == ''){
         error.innerHTML ="Oh-oh no name entered!!"
     } else{
-        error.innerHTML == "Oh-oh you did not choose a language!"
+        error.innerHTML = "Oh-oh you did not choose a language!"
     }
     name1.value = ''
     setTimeout(function(){
