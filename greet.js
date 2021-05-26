@@ -19,10 +19,10 @@ function greetMe() {
         greetme.innerHTML = greetNames.getMessage()
        
     }
-    else if (name1.value == 'Oh-oh no name entered!!'){
-        error.innerHTML =""
+    else if (name1.value == ''){
+        error.innerHTML ="Oh-oh no name entered!!"
     } else{
-        error.innerHTML = "Oh-oh you did not choose a language!"
+        error.innerHTML == "Oh-oh you did not choose a language!"
     }
     name1.value = ''
     setTimeout(function(){
