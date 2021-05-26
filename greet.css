@@ -1,0 +1,46 @@
+.heading{
+
+    border: 10px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 2px;
+    text-align: center;
+    font-weight:bolder;
+    font-size: 20px;
+}
+body{
+    background-image: url(ayush-bharshankar-S2XSvVyUxpo-unsplash.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+
+.nameBox{
+text-align: center;
+border-radius: 10px;
+
+
+}
+.languages{
+    display: flex;
+  text-align: center;
+}
+
+span {
+    margin: 3%;
+    
+}
+
+.greetingBox{
+    text-align: center;
+    font-size: 10px;
+
+}
+
+.error{
+    color: red;
+    counter-reset: unset;
+}
+.resetBtn{
+
+}
