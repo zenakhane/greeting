@@ -1,7 +1,5 @@
 
 function Greetings() {
-    // var nameGreet = "";
-    //var message = "";
     var namesGreetedList = []  
 
 
