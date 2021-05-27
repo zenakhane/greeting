@@ -6,8 +6,9 @@ var greetme = document.querySelector(".greetme");
 var name1 = document.querySelector(".name1");
 var error = document.querySelector(".error");
 var reset = document.querySelector(".resetBtn")
+var resetBtn = document.querySelector(".reset")
 var counterElement = document.querySelector(".counter")
-
+var nameGreetNow = 0
 
 var greetNames = Greetings();
 
@@ -18,10 +19,12 @@ function greetMe() {
             greetme.innerHTML = ''
         }, 4000)
         var langBtn = languageBtn.value.trim();
-        console.log(langBtn)
-        greetNames.nameToGreet(name1.value)
-        greetNames.greetMessage(langBtn)
-        greetme.innerHTML = greetNames.getMessage()
+        console.log(name1.value)
+
+        greetNames.setNames(name1.value)
+        greetme.innerHTML = greetNames.greetMessage(name1.value, langBtn)
+        console.log(greetNames.setNameCount())
+        counterElement.innerHTML = greetNames.setNameCount()
         
     }
     else if (name1.value == '') {
@@ -40,13 +43,31 @@ function greetMe() {
     buttons()
 }
 greetBtn.addEventListener('click', greetMe)
+// reset.addEventListener('click',greetMe)
 
 function buttons() {
     var languageBtn = document.querySelector("input[name='langs']:checked");
     languageBtn.checked = false;
-
-
 }
-// reset.addEventListener('click',greetMe )
+greetBtn.addEventListener('click', function(){
+    nameGreetNow ++;
+    localStorage['greet'] = nameGreetNow;
 
+})
+if(localStorage['greet']){
+    nameGreetNow = Number(localStorage['greet'])
+    counterElement.innerHTML = nameGreetNow
+}
+
+resetBtn.addEventListener('click', function(){
+    
+    error.innerHTML = 'LocalStorage will be reseted!!'
+
+    setTimeout(function(){
+        localStorage.clear()
+        location.reload()
+    }, 3000)
+    
+    
+})
 

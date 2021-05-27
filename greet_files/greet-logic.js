@@ -1,48 +1,48 @@
 
 function Greetings() {
-    var nameGreet = "";
-    var message = "";
-    var counter = 0
-    var namesGreeted = []  
+    // var nameGreet = "";
+    //var message = "";
+    var namesGreetedList = []  
 
 
-    function greetMessage(name) {
-        if (name === "Venda") {
-            message = "Ndaa, " + nameGreet;
-
-        }
-        else if (name === "Tsonga") {
-            message = "Ahee, " + nameGreet;
+    function greetMessage(name, lang) {
+        if (lang === "Venda") {
+            return "Ndaa, " + name;
 
         }
-        else if (name === "Nama") {
-            message = "Halau, " + nameGreet;
+        else if (lang === "Tsonga") {
+            return "Ahee, " + name;
+
+        }
+        else if (lang === "Nama") {
+            return "Halau, " + name;
 
         }
 
     }
 
-    function nameToGreet(name) {
-        if(namesGreeted.length ==0){
-            namesGreeted.push(name)
-        }else {
-            for(var i =0; i < namesGreeted.length; i++) {
-                if (namesGreeted[i] == name){
-                    
-                }
-            }
-        }
-        nameGreet = name;
+function setNames(name){
+    console.log(name + "sdsdsd")
+    if(!namesGreetedList.includes(name)){
+       namesGreetedList.push(name)
     }
+   
+}
+function setNameCount(){
+    console.log(namesGreetedList)
+    return namesGreetedList.length;
 
-    function getMessage() {
-        return message
-    }
+}
+
+function getNamesList(){
+    return namesGreetedList
+}
 
     return {
         greetMessage,
-        getMessage,
-        nameToGreet
+        getNamesList,
+        setNames,
+        setNameCount
 
     }
 

@@ -1,8 +1,8 @@
 describe('Greet', function () {
     it('should show name greeted in venda', function () {
-        assert.equal('Zena',);
-
-
+        var message = Greetings()
+message.setNames('Zena')
+        assert.equal(message.greetMessage(),'Ndaa, Zena',);
     });
 
     it('should show name greeted in Nama', function () {
