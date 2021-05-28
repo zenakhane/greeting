@@ -16,10 +16,9 @@ body{
 }
 
 .nameBox{
-/* align-content: center; */
+
 border-radius: 10px;
 font-size: 100%;
-/* display: flex; */
 
 }
 .languages input[type="radio"]  {
@@ -28,21 +27,16 @@ font-size: 100%;
 }
 
 .languages label{
- /* display: inline-block; */
+
  display: inline;
  margin-left: 5px;
 
-    /* ay: flex; */
-  /* text-align: center; */
+   
 }
 
-span {
-    /* margin: 3%; */
-    
-}
 
 .greetingBox{
-    /* text-align: center; */
+   
     font-size: 10px;
 
 }

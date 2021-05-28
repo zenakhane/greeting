@@ -29,8 +29,6 @@ function greetMe() {
     }
     else if (name1.value == '') {
         error.innerHTML = "Oh-oh no name entered!!"
-    } else if (name1.value == "") {
-        error.innerHTML = "Please enter a name"
     }
     else {
         error.innerHTML = "Oh-oh you did not choose a language!"
@@ -43,7 +41,7 @@ function greetMe() {
     buttons()
 }
 greetBtn.addEventListener('click', greetMe)
-// reset.addEventListener('click',greetMe)
+
 
 function buttons() {
     var languageBtn = document.querySelector("input[name='langs']:checked");
@@ -61,7 +59,7 @@ if(localStorage['greet']){
 
 resetBtn.addEventListener('click', function(){
     
-    error.innerHTML = 'LocalStorage will be reseted!!'
+    error.innerHTML = 'Reseting counter!!'
 
     setTimeout(function(){
         localStorage.clear()
