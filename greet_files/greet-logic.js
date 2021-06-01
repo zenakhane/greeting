@@ -20,7 +20,6 @@ function Greetings() {
     }
 
 function setNames(name){
-    console.log(name + "sdsdsd")
     if(!namesGreetedList.includes(name)){
        namesGreetedList.push(name)
     }

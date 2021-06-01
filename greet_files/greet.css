@@ -9,7 +9,7 @@
     font-size: 20px;
 }
 body{
-    background-image: url(/greet_files/ayush-bharshankar-S2XSvVyUxpo-unsplash.jpg);
+    background-image: url(./ayush-bharshankar-S2XSvVyUxpo-unsplash.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     text-align: center;
@@ -19,6 +19,9 @@ body{
 
 border-radius: 10px;
 font-size: 100%;
+margin-left: 3%;
+padding: 3%;
+
 
 }
 .languages input[type="radio"]  {
@@ -49,6 +52,7 @@ font-size: 100%;
     
 font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 font-size: 150%;
+display: inline;
 
 
 }
