@@ -8,7 +8,7 @@ var error = document.querySelector(".error");
 var reset = document.querySelector(".resetBtn")
 var resetBtn = document.querySelector(".reset")
 var counterElement = document.querySelector(".counter")
-var nameGreetNow = 0
+var nameGreetNow = {}
 
 var greetNames = Greetings();
 
