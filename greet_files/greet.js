@@ -8,9 +8,19 @@ var error = document.querySelector(".error");
 var reset = document.querySelector(".resetBtn")
 var resetBtn = document.querySelector(".reset")
 var counterElement = document.querySelector(".counter")
-var nameGreetNow = 0
 
 var greetNames = Greetings();
+
+var nameGreetNow = []
+
+if (localStorage['greetNames']) {
+    nameGreetNow = JSON.parse(localStorage.getItem('greetNames'))
+    // nameGreetNow = Number(localStorage['greetNames'])
+    // counterElement.innerHTML = nameGreetNow
+}
+
+greetNames.setNamesGreetedList(nameGreetNow)
+counterElement.innerHTML = nameGreetNow.length
 
 function greetMe() {
     var languageBtn = document.querySelector("input[name='langs']:checked");
@@ -21,11 +31,14 @@ function greetMe() {
         var langBtn = languageBtn.value.trim();
         console.log(name1.value)
 
-        greetNames.setNames(name1.value)
+        if(greetNames.setNames(name1.value)){
+            localStorage.setItem('greetNames', JSON.stringify(greetNames.getNamesList()))
+            // localStorage['greetNames'] = greetNames.getNamesList().length;
+        }
         greetme.innerHTML = greetNames.greetMessage(name1.value, langBtn)
         console.log(greetNames.setNameCount())
         counterElement.innerHTML = greetNames.setNameCount()
-        
+
     }
     else if (name1.value == '') {
         error.innerHTML = "Oh-oh no name entered!!"
@@ -47,25 +60,18 @@ function buttons() {
     var languageBtn = document.querySelector("input[name='langs']:checked");
     languageBtn.checked = false;
 }
-greetBtn.addEventListener('click', function(){
-    nameGreetNow ++;
-    localStorage['greet'] = nameGreetNow;
 
-})
-if(localStorage['greet']){
-    nameGreetNow = Number(localStorage['greet'])
-    counterElement.innerHTML = nameGreetNow
-}
 
-resetBtn.addEventListener('click', function(){
-    
+
+resetBtn.addEventListener('click', function () {
+
     error.innerHTML = 'Reseting counter!!'
 
-    setTimeout(function(){
+    setTimeout(function () {
         localStorage.clear()
         location.reload()
     }, 3000)
-    
-    
+
+
 })
 

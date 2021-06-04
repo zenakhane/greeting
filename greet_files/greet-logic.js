@@ -1,9 +1,14 @@
 
 function Greetings() {
-    var namesGreetedList = []  
+    var namesGreetedList = []
+    var nameGreetNow = 0
+
 
 
     function greetMessage(name, lang) {
+        
+        name = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
+
         if (lang === "Venda") {
             return "Ndaa, " + name;
 
@@ -20,26 +25,37 @@ function Greetings() {
     }
 
 function setNames(name){
+    name = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
     if(!namesGreetedList.includes(name)){
+        nameGreetNow++
        namesGreetedList.push(name)
+       return true
     }
    
 }
 function setNameCount(){
-    console.log(namesGreetedList)
     return namesGreetedList.length;
+}
 
+function setNamesGreetedList(name){
+    namesGreetedList = name
 }
 
 function getNamesList(){
     return namesGreetedList
 }
 
+function getnameGreetNow(){
+    return nameGreetNow
+}
+
     return {
         greetMessage,
+        getnameGreetNow,
         getNamesList,
         setNames,
-        setNameCount
+        setNameCount,
+        setNamesGreetedList
 
     }
 
